@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      h1 {
+        color: rgb(86, 85, 166);
+      }
+
+      input {
+        width: 100px;
+        margin: 10px;
+      }
+
+      button {
+        background-color: rgb(158, 156, 214);
+        color: black;
+        padding: 10px;
+        border: 10;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><b>Konverter Suhu</b></h1>
+    <p><b>Masukkan suhu dalam celcius atau fahrenheit atau sebaliknya</b></p>
+    <input id="celcius" type="number" placeholder="Celcius" />
+    <input id="fahrenheit" type="number" placeholder="Fahrenheit" />
+    <button id="convert" onclick="convert()"><b>Konversi</b></button>
+    <script>
+      // Fungsi untuk mengonversi suhu
+      function convert() {
+        // Mendapatkan elemen input dan output
+        var celcius = document.getElementById("celcius");
+        var fahrenheit = document.getElementById("fahrenheit");
+
+        // Menghitung suhu yang dikonversi
+        if (celcius.value) {
+          // Jika input adalah celcius, konversi ke fahrenheit
+          fahrenheit.value = celcius.value * 1.8 + 32;
+        } else if (fahrenheit.value) {
+          // Jika input adalah fahrenheit, konversi ke celcius
+          celcius.value = (fahrenheit.value - 32) / 1.8;
+        } else {
+          // Jika input kosong, tampilkan pesan error
+          alert("Masukkan suhu yang valid");
+        }
+      }
+    </script>
+</html>
